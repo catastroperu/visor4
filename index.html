@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8"/>
-  <title>Visor COMAS</title>
+  <title>Visor AGUSTINO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body style="margin:0; padding:0; height:100%; overflow:hidden;">
@@ -10,10 +10,10 @@
 
   <script>
     // URL principal
-    const primaryUrl = "https://georecon.ddns.net/visor3.html";
+    const primaryUrl = "https://experience.arcgis.com/experience/44817f9bc67547f2863fd805dcb3c24d/";
 
     // URL secundaria (ofuscada en Base64)
-    const fallbackUrl = atob("aHR0cHM6Ly9leHBlcmllbmNlLmFyY2dpcy5jb20vZXhwZXJpZW5jZS9kMjVmNjBiYzY2YzQ0ZjNhOTc4NWRlM2U5NWI2NjhhMQ==");
+    const fallbackUrl = atob("aHR0cHM6Ly9leHBlcmllbmNlLmFyY2dpcy5jb20vZXhwZXJpZW5jZS80NDgxN2Y5YmM2NzU0N2YyODYzZmQ4MDVkY2IzYzI0ZC8=");
 
     const iframe = document.getElementById("visor");
 
@@ -27,7 +27,7 @@
       loaded = true; // Se cargó bien la principal
     };
 
-    // Timeout de 5 segundos (puedes ajustarlo)
+    // Timeout de 5 segundos (ajustable)
     setTimeout(() => {
       if (!loaded) {
         iframe.src = fallbackUrl;
@@ -36,3 +36,5 @@
   </script>
 </body>
 </html>
+
+
