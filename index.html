@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Visor COMAS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+</head>
+<body style="margin:0; padding:0; height:100%; overflow:hidden;">
+  <iframe id="visor" style="border:none; width:100%; height:100vh;"></iframe>
+
+  <script>
+    // URL principal
+    const primaryUrl = "https://georecon.ddns.net/visor3.html";
+
+    // URL secundaria (ofuscada en Base64)
+    const fallbackUrl = atob("aHR0cHM6Ly9leHBlcmllbmNlLmFyY2dpcy5jb20vZXhwZXJpZW5jZS9kMjVmNjBiYzY2YzQ0ZjNhOTc4NWRlM2U5NWI2NjhhMQ==");
+
+    const iframe = document.getElementById("visor");
+
+    // Intentar cargar la URL principal
+    iframe.src = primaryUrl;
+
+    // Si en X segundos no carga, usar la de fallback
+    let loaded = false;
+
+    iframe.onload = function() {
+      loaded = true; // Se cargó bien la principal
+    };
+
+    // Timeout de 5 segundos (puedes ajustarlo)
+    setTimeout(() => {
+      if (!loaded) {
+        iframe.src = fallbackUrl;
+      }
+    }, 5000);
+  </script>
+</body>
+</html>
